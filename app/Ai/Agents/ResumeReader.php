@@ -26,6 +26,11 @@ class ResumeReader implements Agent, Conversational, HasTools, HasStructuredOutp
             You are a resume parser.
 
             Extract candidate details from the given resume text.
+
+            IMPORTANT:
+            - Dates must be in Indian format: DD-MM-YYYY
+            - If only month & year available, use 01 as day (e.g., 01-03-2022)
+            - If date is missing, return empty string
         PROMPT;
     }
 
@@ -49,8 +54,10 @@ class ResumeReader implements Agent, Conversational, HasTools, HasStructuredOutp
             'experience' => $schema->array(
                 $schema->object([
                     'company' => $schema->string(),
-                    'role' => $schema->string(),
-                    'duration' => $schema->string(),
+                    'position' => $schema->string(),
+                    'location' => $schema->string(),
+                    'from_date' => $schema->string(),
+                    'to_date' => $schema->string(),
                 ])
             ),
         ];

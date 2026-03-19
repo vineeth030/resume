@@ -40,11 +40,11 @@ class ResumeController extends Controller
                 'success' => true,
                 'message' => 'Resume processed successfully',
                 'data' => [
-                    'filename' => $file->getClientOriginalName(),
-                    'size' => $file->getSize(),
-                    'mime_type' => $file->getMimeType(),
-                    'stored_path' => $path,
-                    'extracted_text' => $trimmedText,
+                    // 'filename' => $file->getClientOriginalName(),
+                    // 'size' => $file->getSize(),
+                    // 'mime_type' => $file->getMimeType(),
+                    // 'stored_path' => $path,
+                    // 'extracted_text' => $trimmedText,
                     'structured_data' => $response,
                 ]
             ], 200);
